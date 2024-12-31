@@ -8,19 +8,19 @@ const Carousel = () => {
 
   const slides = [
     {
-      title: "Open-source SaaS Starter Kit and Boilerplate for Next.js",
+      title: "Donat Blood and Save Lif",
       description:
         "Next.js SaaS Boilerplate and Starter Kit designed and built for SaaS startups. It comes with all necessary integrations, pages, and components you need to launch a feature-rich SaaS website.",
       image: "/images/hero/hero-image.jpg",
     },
     {
-      title: "Build Modern Applications Effortlessly",
+      title: "Donor is King of the World",
       description:
         "Leverage the power of Next.js to build blazing-fast, scalable web applications with integrated tools and best practices.",
       image: "/images/hero/hero-image-2.jpg",
     },
     {
-      title: "Launch Your SaaS Business Quickly",
+      title: "you blood can Make Save one Family",
       description:
         "Start with ready-made solutions tailored for SaaS startups and focus on building your unique features.",
       image: "/images/hero/hero-image-3.jpg",
