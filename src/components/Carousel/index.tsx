@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const Hero = () => {
+const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -52,12 +52,12 @@ const Hero = () => {
         <Image
           src={slides[currentSlide].image}
           alt="hero"
-          className="object-cover w-full h-full"
+          className="h-full w-full object-cover"
           layout="fill"
         />
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 text-white">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-center text-white">
         <h1 className="mb-6 text-4xl font-bold leading-snug sm:text-5xl lg:text-6xl">
           {slides[currentSlide].title}
         </h1>
@@ -83,4 +83,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Carousel;
