@@ -27,7 +27,7 @@ export default function Home() {
       <ScrollUp />
       <Carousel />
       <Features />
-      <About />
+      {/* <About /> */}
       <CallToAction />
       <Pricing />
       <Testimonials />
