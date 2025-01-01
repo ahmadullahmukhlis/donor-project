@@ -4,12 +4,12 @@ import CallToAction from "@/components/CallToAction";
 import Clients from "@/components/Clients";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
-import Faq from "@/components/Faq";
+// import Faq from "@/components/Faq";
 import Features from "@/components/Features";
 import Carousel from "@/components/Carousel";
-import Pricing from "@/components/Pricing";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
+// import Pricing from "@/components/Pricing";
+// import Team from "@/components/Team";
+// import Testimonials from "@/components/Testimonials";
 import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 
@@ -28,7 +28,7 @@ export default function Home() {
       <Carousel />
       <Features />
       {/* <About /> */}
-      {/* <CallToAction /> */}
+      <CallToAction />
       {/* <Pricing /> */}
       {/* <Testimonials /> */}
       {/* <Faq /> */}
