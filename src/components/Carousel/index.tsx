@@ -64,7 +64,7 @@ const Carousel = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden bg-primary"
+      className="relative h-screen w-full overflow-hidden bg-gray"
     >
       <div className="absolute inset-0">
         <Image
