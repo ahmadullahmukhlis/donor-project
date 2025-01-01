@@ -56,7 +56,7 @@ const MagicLink = () => {
       <div className="mb-9">
         <button
           type="submit"
-          className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-gray px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-blue-dark"
+          className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-blood px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-blue-dark"
         >
           Send Magic Link {loader && <Loader />}
         </button>
