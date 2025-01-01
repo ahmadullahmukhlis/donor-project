@@ -14,6 +14,7 @@ const config: Config = {
         ...colors,
         primary: "#1A202C", // Example primary color
         gray: "#5E0B0B", // Blood-red color for bg-blood
+        blood: "#5E0B0B", // Blood-red color for bg-blood
       },
     },
   },
