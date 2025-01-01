@@ -132,7 +132,7 @@ const Contact = () => {
                 <div className="mb-0">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center rounded-md bg-gray px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-gray/90"
+                    className="inline-flex items-center justify-center rounded-md bg-blood px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-blood/90"
                   >
                     Send
                   </button>

@@ -20,7 +20,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
         </Link>
       </div>
       <div>
-        <span className="mb-5 inline-block rounded bg-gray px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
+        <span className="mb-5 inline-block rounded bg-blood px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
           {format(new Date(date), "dd MMM yyyy")}
         </span>
         <h3>
