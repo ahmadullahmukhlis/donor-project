@@ -1,21 +1,21 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import Contact from "@/components/Contact";
+import Donation from "@/components/Donation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Contact Page | Play SaaS Starter Kit and Boilerplate for Next.js",
-  description: "This is contact page description",
+    "Donation Page | Play SaaS Starter Kit and Boilerplate for Next.js",
+  description: "This is Donation page description",
 };
 
-const ContactPage = () => {
+const DonationPage = () => {
   return (
     <>
-      <Breadcrumb pageName="Contact Page" />
+      <Breadcrumb pageName="Donation Page" />
 
-      <Contact />
+      <Donation />
     </>
   );
 };
 
-export default ContactPage;
+export default DonationPage;

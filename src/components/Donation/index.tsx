@@ -1,4 +1,4 @@
-const Contact = () => {
+const Donation = () => {
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
@@ -146,4 +146,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Donation;
