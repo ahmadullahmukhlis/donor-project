@@ -1,6 +1,25 @@
-import bloodGroups from "./bloodGroups";
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import bloodGroups from "./bloodGroups"; // Blood groups file
+import provincesAndDistricts from "./afghanistanData"; // Provinces and districts file
+import Select from "react-select"; // Select2 component
+
 const Donation = () => {
+  const [selectedProvince, setSelectedProvince] = useState(null);
+  const [districtOptions, setDistrictOptions] = useState([]);
+
+  // Handle province selection to update districts
+  const handleProvinceChange = (selectedOption) => {
+    setSelectedProvince(selectedOption);
+    setDistrictOptions(
+      provincesAndDistricts[selectedOption.value].map((district) => ({
+        label: district,
+        value: district,
+      }))
+    );
+  };
+
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
@@ -68,18 +87,25 @@ const Donation = () => {
                     >
                       Blood Group*
                     </label>
-                    <select
-                      name="bloodGroup"
-                      required
-                      className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
-                    >
-                      <option value="">Select your blood group</option>
-                      {bloodGroups.map((group) => (
-                        <option key={group} value={group}>
-                          {group}
-                        </option>
-                      ))}
-                    </select>
+                    <Select
+                      options={bloodGroups.map((group) => ({
+                        label: group,
+                        value: group,
+                      }))}
+                      placeholder="Select Blood Group"
+                      className="w-full text-dark placeholder:text-body-color/60 dark:text-white focus:outline-none dark:bg-dark-2 dark:border-dark-3 dark:focus:border-primary"
+                      styles={{
+                        control: (provided) => ({
+                          ...provided,
+                          border: "none",  // No border
+                          boxShadow: "none", // Remove shadow
+                        }),
+                        singleValue: (provided) => ({
+                          ...provided,
+                          color: "#333", // Text color
+                        }),
+                      }}
+                    />
                   </div>
                   <div>
                     <label
@@ -104,12 +130,25 @@ const Donation = () => {
                     >
                       Province*
                     </label>
-                    <input
-                      type="text"
-                      name="province"
-                      placeholder="Province"
-                      required
-                      className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
+                    <Select
+                      options={Object.keys(provincesAndDistricts).map((province) => ({
+                        label: province,
+                        value: province,
+                      }))}
+                      onChange={handleProvinceChange}
+                      placeholder="Select Province"
+                      className="w-full text-dark placeholder:text-body-color/60 dark:text-white focus:outline-none dark:bg-dark-2 dark:border-dark-3 dark:focus:border-primary"
+                      styles={{
+                        control: (provided) => ({
+                          ...provided,
+                          border: "none",  // No border
+                          boxShadow: "none", // Remove shadow
+                        }),
+                        singleValue: (provided) => ({
+                          ...provided,
+                          color: "#333", // Text color
+                        }),
+                      }}
                     />
                   </div>
                   <div>
@@ -119,12 +158,22 @@ const Donation = () => {
                     >
                       District*
                     </label>
-                    <input
-                      type="text"
-                      name="district"
-                      placeholder="District"
-                      required
-                      className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
+                    <Select
+                      options={districtOptions}
+                      isDisabled={!districtOptions.length}
+                      placeholder="Select District"
+                      className="w-full text-dark placeholder:text-body-color/60 dark:text-white focus:outline-none dark:bg-dark-2 dark:border-dark-3 dark:focus:border-primary"
+                      styles={{
+                        control: (provided) => ({
+                          ...provided,
+                          border: "none",  // No border
+                          boxShadow: "none", // Remove shadow
+                        }),
+                        singleValue: (provided) => ({
+                          ...provided,
+                          color: "#333", // Text color
+                        }),
+                      }}
                     />
                   </div>
                 </div>
