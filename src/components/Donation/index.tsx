@@ -1,3 +1,5 @@
+import bloodGroups from "./bloodGroups";
+import React from "react";
 const Donation = () => {
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
@@ -72,14 +74,11 @@ const Donation = () => {
                       className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
                     >
                       <option value="">Select your blood group</option>
-                      <option value="A+">A+</option>
-                      <option value="A-">A-</option>
-                      <option value="B+">B+</option>
-                      <option value="B-">B-</option>
-                      <option value="O+">O+</option>
-                      <option value="O-">O-</option>
-                      <option value="AB+">AB+</option>
-                      <option value="AB-">AB-</option>
+                      {bloodGroups.map((group) => (
+                        <option key={group} value={group}>
+                          {group}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div>
