@@ -87,13 +87,13 @@ const Carousel = () => {
             onClick={prevSlide}
             className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100"
           >
-            Previous
+            Donate Blood
           </button>
           <button
             onClick={nextSlide}
             className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100"
           >
-            Next
+            Search Blood
           </button>
         </div>
       </div>
