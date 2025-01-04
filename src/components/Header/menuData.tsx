@@ -10,13 +10,13 @@ const menuData: Menu[] = [
   {
     id: 2,
     title: "Blood Donation",
-    path: "/BLOOD-donation",
+    path: "/donation",
     newTab: false,
   },
   {
     id: 3,
     title: "Find Blood",
-    path: "/find-blood",
+    path: "/finde",
     newTab: false,
   },
   // {

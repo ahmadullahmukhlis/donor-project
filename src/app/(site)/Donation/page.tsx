@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const DonationPage = () => {
   return (
     <>
-      <Breadcrumb pageName="Donation Page" />
+      {/* <Breadcrumb pageName="Donation" /> */}
 
       <Donation />
     </>
