@@ -16,7 +16,7 @@ const menuData: Menu[] = [
   {
     id: 3,
     title: "Find Blood",
-    path: "/finde",
+    path: "/find",
     newTab: false,
   },
   // {

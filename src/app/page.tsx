@@ -28,7 +28,7 @@ export default function Home() {
       <Carousel />
       <Features />
       {/* <About /> */}
-      <Find />
+      {/* <Find /> */}
       {/* <Pricing /> */}
       {/* <Testimonials /> */}
       {/* <Faq /> */}
