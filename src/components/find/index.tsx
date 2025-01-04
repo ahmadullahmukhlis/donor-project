@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const CallToAction = () => {
+const find = () => {
   return (
     <section className="relative z-10 overflow-hidden bg-blood py-20 lg:py-[115px]">
       <div className="container mx-auto">
@@ -99,4 +99,4 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+export default find;
