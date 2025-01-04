@@ -27,15 +27,7 @@ export default function Home() {
       <ScrollUp />
       <Carousel />
       <Features />
-      {/* <About /> */}
-      {/* <Find /> */}
-      {/* <Pricing /> */}
-      {/* <Testimonials /> */}
-      {/* <Faq /> */}
-      {/* <Team /> */}
-      {/* <HomeBlogSection posts={posts} /> */}
       <Donation />
-      {/* <Clients /> */}
     </main>
   );
 }
