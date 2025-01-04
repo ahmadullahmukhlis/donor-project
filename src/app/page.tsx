@@ -1,6 +1,6 @@
 import About from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
-import CallToAction from "@/components/CallToAction";
+import Find from "@/components/find";
 import Clients from "@/components/Clients";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Donation from "@/components/Donation";
@@ -28,7 +28,7 @@ export default function Home() {
       <Carousel />
       <Features />
       {/* <About /> */}
-      {/* <CallToAction /> */}
+      <Find />
       {/* <Pricing /> */}
       {/* <Testimonials /> */}
       {/* <Faq /> */}
