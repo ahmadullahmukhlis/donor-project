@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "home": "Home",
+    "donation": "Blood Donation",
+    "find": "Find Blood"
+  },
+  "language": {
+    "english": "English",
+    "pashto": "Pashto",
+    "persian": "Persian"
+  }
+}
