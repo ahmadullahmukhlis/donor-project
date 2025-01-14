@@ -8,5 +8,20 @@
     "english": "English",
     "pashto": "Pashto",
     "persian": "Persian"
+  },"carousel": {
+    "slides": [
+      {
+        "title": "Donate Blood and Save Life",
+        "description": "Next.js SaaS Boilerplate and Starter Kit designed and built for SaaS startups. It comes with all necessary integrations, pages, and components you need to launch a feature-rich SaaS website."
+      },
+      {
+        "title": "Donor is King of the World",
+        "description": "Leverage the power of Next.js to build blazing-fast, scalable web applications with integrated tools and best practices."
+      },
+      {
+        "title": "Your Blood Can Save One Family",
+        "description": "Start with ready-made solutions tailored for SaaS startups and focus on building your unique features."
+      }
+    ]
   }
 }

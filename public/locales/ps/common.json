@@ -8,5 +8,24 @@
     "english": "انگلیسی",
     "pashto": "پښتو",
     "persian": "فارسی"
+  },
+  "carousel": {
+    "slides": [
+      {
+        "title": "د خونې مرسته وکړئ او ژوند وژغورئ",
+        "description": "د Next.js SaaS بېلګه او د پیل کټ چې د SaaS سټارټ اپ لپاره ډیزاین او جوړ شوی دی.",
+        "image": "/images/carousel/carousel.jpg"
+      },
+      {
+        "title": "د ورکونکي نړۍ پاچا دی",
+        "description": "د Next.js ځواک د کارولو لپاره د چټک، پراختیا پذیر ویب غوښتنلیکونو جوړول.",
+        "image": "/images/carousel/carousel1.jpg"
+      },
+      {
+        "title": "ستاسو وینه کولی شي یوه کورنۍ وژغوري",
+        "description": "د SaaS سټارټ اپ لپاره د تیار شویو حلونو سره پیل وکړئ.",
+        "image": "/images/carousel/carousel2.jpg"
+      }
+    ]
   }
 }
