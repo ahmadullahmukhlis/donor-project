@@ -1,12 +1,12 @@
 {
   "menu": {
-    "home": "کور",
-    "donation": "د وینې مرسته",
-    "find": "وینه پیدا کړئ"
+    "home": "خانه",
+    "about": "درباره",
+    "contact": "تماس"
   },
   "language": {
-    "english": "انګلیسي",
+    "english": "انگلیسی",
     "pashto": "پښتو",
-    "persian": "فارسي"
+    "persian": "فارسی"
   }
 }
