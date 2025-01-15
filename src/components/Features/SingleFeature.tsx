@@ -1,3 +1,5 @@
+'use client'; // Marking this file as a Client Component
+
 import { Feature } from "@/types/feature";
 import Link from "next/link";
 

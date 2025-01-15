@@ -23,5 +23,29 @@
         "description": "Start with ready-made solutions tailored for SaaS startups and focus on building your unique features."
       }
     ]
-  }
+  },
+    "feature": {
+      "donor": {
+        "title": "Become a Donor",
+        "paragraph": "Every drop counts. Join our life-saving mission by donating blood today.",
+        "btn": "Learn More"
+      },
+      "find": {
+        "title": "Find a Blood Drive",
+        "paragraph": "Locate a nearby blood drive and contribute to a greater cause.",
+        "btn": "Learn More"
+      },
+      "request": {
+        "title": "Request Blood",
+        "paragraph": "In urgent need of blood? Reach out to us for assistance.",
+        "btn": "Learn More"
+      },
+      "learn": {
+        "title": "Learn About Blood Types",
+        "paragraph": "Understand blood type compatibility and how it impacts donations.",
+        "btn": "Learn More"
+      }
+    }
+  
+  
 }

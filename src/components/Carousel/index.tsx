@@ -9,7 +9,7 @@ import Link from "next/link";
 const Carousel = () => {
   const { selectedLanguage, translations, handleLanguageChange } = useTranslation();  // Access language and translations from context
   const [slides, setSlides] = useState([]);
-  
+
   // Load carousel and menu data when the language changes
   useEffect(() => {
     if (translations && translations.carousel && translations.carousel.slides) {

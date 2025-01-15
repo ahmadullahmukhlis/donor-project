@@ -1,3 +1,5 @@
+'use client'; // Marking this file as a Client Component
+
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
