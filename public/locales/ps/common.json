@@ -1,14 +1,16 @@
 {
-  "menu": {
-    "home": "خانه",
-    "about": "درباره",
-    "contact": "تماس"
-  },
-  "language": {
-    "english": "انگلیسی",
-    "pashto": "پښتو",
-    "persian": "فارسی"
-  },
+  
+    "menu": {
+      "home": "کور",
+      "about": "په اړه",
+      "contact": "اړیکه"
+    },
+    "language": {
+      "english": "انګلیسي",
+      "pashto": "پښتو",
+      "persian": "فارسي"
+    }
+    ,
   "carousel": {
     "slides": [
       {
