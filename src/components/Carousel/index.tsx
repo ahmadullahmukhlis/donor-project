@@ -2,30 +2,18 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useTranslation } from "@/components/context/TranslationContext.js"; // Import the TranslationContext
 
 const Carousel = () => {
-  const searchParams = useSearchParams();
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const { selectedLanguage, translations } = useTranslation();  // Access language and translations from context
   const [slides, setSlides] = useState([]);
 
-  // Update the language and load new translations when the query parameter changes
+  // Load carousel data when the language changes
   useEffect(() => {
-    const language = searchParams.get('lang') || 'en';
-    setSelectedLanguage(language);
-    loadTranslations(language);
-  }, [searchParams]);  // Re-run when query parameters change
-
-  // Fetch translations for the selected language
-  const loadTranslations = async (language) => {
-    try {
-      const response = await fetch(`/locales/${language}/common.json`);
-      const data = await response.json();
-      setSlides(data.carousel.slides || []); // Assuming 'carousel' section exists in the JSON file
-    } catch (error) {
-      console.error("Error loading translations:", error);
+    if (translations && translations.carousel && translations.carousel.slides) {
+      setSlides(translations.carousel.slides);  // Set the carousel slides based on current translations
     }
-  };
+  }, [translations]);  // Re-run when translations change
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
