@@ -1,9 +1,10 @@
 {
   "menu": {
     "home": "خانه",
-    "about": "درباره",
-    "contact": "تماس"
-  },
+    "donation": "اهدای خون",
+    "find": "پیدا کردن خون"
+  }
+  ,
   "language": {
     "english": "انگلیسی",
     "pashto": "پښتو",

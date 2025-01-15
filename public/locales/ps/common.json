@@ -1,9 +1,11 @@
 {
   
     "menu": {
-      "home": "کور",
-      "about": "په اړه",
-      "contact": "اړیکه"
+      
+        "home": "کور",
+        "donation": "د وینې ډالۍ",
+        "find": "وینه پیدا کړئ"
+      
     },
     "language": {
       "english": "انګلیسي",

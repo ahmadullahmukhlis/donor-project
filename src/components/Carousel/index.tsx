@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useTranslation } from "@/components/context/TranslationContext.js"; // Import the TranslationContext
+import { useSearchParams } from "next/navigation";
+import { useTranslation } from "@/components/context/TranslationContext.js"; // Assuming you have the TranslationContext
+import Link from "next/link";
 
 const Carousel = () => {
-  const { selectedLanguage, translations } = useTranslation();  // Access language and translations from context
+  const { selectedLanguage, translations, handleLanguageChange } = useTranslation();  // Access language and translations from context
   const [slides, setSlides] = useState([]);
-
-  // Load carousel data when the language changes
+  
+  // Load carousel and menu data when the language changes
   useEffect(() => {
     if (translations && translations.carousel && translations.carousel.slides) {
       setSlides(translations.carousel.slides);  // Set the carousel slides based on current translations
@@ -34,6 +36,10 @@ const Carousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Get the button texts from the menu section
+  const donateBloodText = translations.menu?.donation || "Blood Donation";
+  const findBloodText = translations.menu?.find || "Find Blood";
+
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden bg-blood">
       <div className="absolute inset-0">
@@ -53,12 +59,12 @@ const Carousel = () => {
           {slides[currentSlide]?.description || "Description not available"}
         </p>
         <div className="flex gap-4">
-          <button onClick={prevSlide} className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100">
-            Donate Blood
-          </button>
-          <button onClick={nextSlide} className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100">
-            Search Blood
-          </button>
+          <Link href="/donation" className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100">
+            {donateBloodText} {/* Dynamic text for donation Link */}
+          </Link>
+          <Link href="/find" className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-dark hover:bg-opacity-100">
+            {findBloodText} {/* Dynamic text for find blood Link */}
+          </Link>
         </div>
       </div>
     </section>
