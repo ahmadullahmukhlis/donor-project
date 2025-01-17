@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { useTranslation } from "@/components/context/TranslationContext.js";
 
 const Header = () => {
@@ -32,7 +31,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleStickyNavbar);
   }, []);
 
-  const textClass = sticky ? "text-dark dark:text-white" : "text-white dark:text-dark";
+  const textClass = sticky
+    ? "text-dark dark:text-white"
+    : "text-white dark:text-dark";
+
+  const buttonBgClass = sticky
+    ? "bg-dark dark:bg-white"
+    : "bg-white dark:bg-dark";
 
   return (
     <header
@@ -49,45 +54,17 @@ const Header = () => {
               href="/"
               className={`navbar-logo block w-full ${sticky ? "py-2" : "py-5"}`}
             >
-              {pathUrl !== "/" ? (
-                <>
-                  <Image
-                    src={`/images/logo/logo.svg`}
-                    alt="logo"
-                    width={240}
-                    height={30}
-                    className={`header-logo w-full dark:hidden ${textClass}`}
-                  />
-                  <Image
-                    src={`/images/logo/logo-white.svg`}
-                    alt="logo"
-                    width={240}
-                    height={30}
-                    className={`header-logo hidden w-full dark:block ${textClass}`}
-                  />
-                </>
-              ) : (
-                <>
-                  <Image
-                    src={`${
-                      sticky
-                        ? "/images/logo/logo.svg"
-                        : "/images/logo/logo-white.svg"
-                    }`}
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className={`header-logo w-full dark:hidden ${textClass}`}
-                  />
-                  <Image
-                    src={"/images/logo/logo-white.svg"}
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className={`header-logo hidden w-full dark:block ${textClass}`}
-                  />
-                </>
-              )}
+              <Image
+                src={`${
+                  sticky
+                    ? "/images/logo/logo.svg" // Sticky logo
+                    : "/images/logo/logo-white.svg" // Transparent logo
+                }`}
+                alt="logo"
+                width={140}
+                height={30}
+                className={`header-logo w-full ${textClass}`}
+              />
             </Link>
           </div>
           <div className="flex w-full items-center justify-between px-4">
@@ -96,28 +73,22 @@ const Header = () => {
                 onClick={navbarToggleHandler}
                 id="navbarToggler"
                 aria-label="Mobile Menu"
-                className="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+                className={`absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden ${buttonBgClass}`}
               >
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
                     navbarOpen ? " top-[7px] rotate-45" : ""
-                  } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                    pathUrl === "/" && sticky ? "bg-dark dark:bg-white" : "bg-white"
-                  }`}
+                  } ${buttonBgClass}`}
                 />
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
                     navbarOpen ? "opacity-0" : ""
-                  } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                    pathUrl === "/" && sticky ? "bg-dark dark:bg-white" : "bg-white"
-                  }`}
+                  } ${buttonBgClass}`}
                 />
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
                     navbarOpen ? " top-[-8px] -rotate-45" : ""
-                  } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                    pathUrl === "/" && sticky ? "bg-dark dark:bg-white" : "bg-white"
-                  }`}
+                  } ${buttonBgClass}`}
                 />
               </button>
               <nav
@@ -142,7 +113,8 @@ const Header = () => {
                 </ul>
               </nav>
             </div>
-            <div className="flex items-center">
+            <div className="hidden items-center justify-end pr-16 sm:flex lg:pr-0">
+              {/* Language Selection */}
               <select
                 value={selectedLanguage}
                 onChange={(e) => handleLanguageChange(e.target.value)}
@@ -158,6 +130,28 @@ const Header = () => {
                   {translations.language?.persian || "Persian"}
                 </option>
               </select>
+
+              {/* Theme Toggle */}
+              <button
+                aria-label="theme toggler"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="ml-4 flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white"
+              >
+                <span>
+                  <svg
+                    className="hidden h-[22px] w-[22px] fill-current dark:block"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="..." />
+                  </svg>
+                  <svg
+                    className="h-[22px] w-[22px] fill-current dark:hidden"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="..." />
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
